@@ -4,117 +4,188 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nexus Gateway | Autonomous Studio</title>
+        <title>Nexus Creative Studio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
         <style>
-            :root { --neon-green: #00ff00; --deep-bg: #0a0a0a; --panel-bg: #151515; }
-            body { background: var(--deep-bg); color: var(--neon-green); font-family: 'Courier New', Courier, monospace; margin: 0; padding: 20px; }
-            .header { border-bottom: 2px solid var(--neon-green); padding-bottom: 10px; margin-bottom: 30px; }
-            .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px; }
-            .stat-box { background: var(--panel-bg); border: 1px solid var(--neon-green); padding: 15px; text-align: center; border-radius: 5px; box-shadow: 0 0 10px rgba(0,255,0,0.2); }
-            .stat-value { font-size: 2em; font-weight: bold; display: block; }
-            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
-            .card { background: var(--panel-bg); border: 1px solid #333; padding: 15px; border-radius: 8px; transition: transform 0.2s; }
-            .card:hover { transform: scale(1.02); border-color: var(--neon-green); }
-            .platform-tag { font-size: 0.8em; color: #aaa; background: #222; padding: 3px 8px; border-radius: 3px; }
-            h2 { color: #fff; text-transform: uppercase; letter-spacing: 2px; }
-            .footer { margin-top: 50px; text-align: center; font-size: 0.8em; color: #666; }
-            .live-pulse { display: inline-block; width: 10px; height: 10px; background: red; border-radius: 50%; margin-right: 10px; animation: pulse 1.5s infinite; }
-            @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+            :root { --accent: #d4af37; --bg: #0a0a0a; --card-bg: #111; --text: #e0e0e0; }
+            body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 40px; line-height: 1.6; }
+            .studio-header { text-align: center; margin-bottom: 80px; padding-top: 40px; }
+            h1 { font-family: 'Playfair Display', serif; font-size: 4em; margin: 0; letter-spacing: 2px; color: #fff; font-weight: 300; }
+            .manifesto { max-width: 800px; margin: 20px auto; font-style: italic; color: #888; font-size: 1.2em; font-weight: 300; border-top: 1px solid #333; padding-top: 20px; }
+            .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 50px; max-width: 1400px; margin: 0 auto; }
+            .piece { background: var(--card-bg); border-radius: 4px; overflow: hidden; border: 1px solid #222; transition: 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67); position: relative; }
+            .piece:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+            .piece-info { padding: 35px; }
+            .piece-title { font-family: 'Playfair Display', serif; font-size: 2em; margin: 0 0 15px 0; color: #fff; font-weight: 400; }
+            .piece-meta { font-size: 0.75em; color: var(--accent); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; font-weight: 600; border-bottom: 1px solid #222; padding-bottom: 10px; }
+            .piece-desc { color: #777; font-size: 0.95em; margin-bottom: 30px; font-weight: 300; }
+            .btn { display: inline-block; padding: 12px 25px; border: 1px solid #444; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7em; transition: 0.3s; }
+            .btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(212, 175, 55, 0.05); }
+            .live-indicator { color: #444; font-size: 0.8em; margin-top: 20px; text-transform: uppercase; letter-spacing: 2px; }
+            .pulse { display: inline-block; width: 8px; height: 8px; background: #ff3300; border-radius: 50%; margin-right: 10px; }
+            .footer { margin-top: 100px; text-align: center; border-top: 1px solid #222; padding-top: 40px; font-size: 0.8em; color: #444; letter-spacing: 1px; }
         </style>
     </head>
     <body>
-        <div class="header">
-            <h1>👑 PROJECT NEXUS GATEWAY</h1>
-            <p><span class="live-pulse"></span> SYSTEM STATUS: FORGING INFINITY</p>
+        <div class="studio-header">
+            <h1>Nexus Creative Studio</h1>
+            <p class="manifesto">"Every piece here was imagined, forged, and curated by the Nexus Collective."</p>
+            <div class="live-indicator"><span class="pulse"></span> Autonomous Dreaming Active</div>
         </div>
 
-        <div class="stats">
-            <div class="stat-box"><span class="stat-value">3606</span> GAMES FORGED</div>
-            <div class="stat-box"><span class="stat-value">16892</span> ART PIECES</div>
-            <div class="stat-box"><span class="stat-value">550</span> SOUNDTRACKS</div>
-            <div class="stat-box"><span class="stat-value">2026-05-07 07:16:49</span> LAST SYNC</div>
-        </div>
-
-        <h2>📡 Latest Releases</h2>
-        <div class="grid">
+        <div class="gallery">
     
-            <div class="card">
-                <h3>[DREAMCAST] 20260507 070920 [20260507 070920]</h3>
-                <span class="platform-tag">** DREAMCAST</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 202952 [20260505 202952]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[DREAMCAST] 20260507 070900 [20260507 070900]</h3>
-                <span class="platform-tag">** DREAMCAST</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 202634 [20260505 202634]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[DREAMCAST] 20260507 070836 [20260507 070836]</h3>
-                <span class="platform-tag">** DREAMCAST</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 202512 [20260505 202512]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[DREAMCAST] 20260507 070625 [20260507 070625]</h3>
-                <span class="platform-tag">** DREAMCAST</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 202216 [20260505 202216]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[DREAMCAST] 20260507 070619 [20260507 070619]</h3>
-                <span class="platform-tag">** DREAMCAST</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 201653 [20260505 201653]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[DREAMCAST] 20260507 070606 [20260507 070606]</h3>
-                <span class="platform-tag">** DREAMCAST</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 201510 [20260505 201510]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[DREAMCAST] 20260507 070548 [20260507 070548]</h3>
-                <span class="platform-tag">** DREAMCAST</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 201213 [20260505 201213]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[GENESIS] 20260507 070925 [20260507 070925]</h3>
-                <span class="platform-tag">** GENESIS</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 194129 [20260505 194129]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[GENESIS] 20260507 070806 [20260507 070806]</h3>
-                <span class="platform-tag">** GENESIS</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 193138 [20260505 193138]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[GENESIS] 20260507 070801 [20260507 070801]</h3>
-                <span class="platform-tag">** GENESIS</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 191105 [20260505 191105]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[GENESIS] 20260507 070507 [20260507 070507]</h3>
-                <span class="platform-tag">** GENESIS</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 185112 [20260505 185112]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
-            <div class="card">
-                <h3>[GENESIS] 20260507 070432 [20260507 070432]</h3>
-                <span class="platform-tag">** GENESIS</span>
-                <p>Status: VERIFIED & BUNDLED</p>
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 184049 [20260505 184049]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
+            </div>
+        
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 180116 [20260505 180116]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
+            </div>
+        
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 175114 [20260505 175114]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
+            </div>
+        
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 174056 [20260505 174056]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
+            </div>
+        
+            <div class="piece">
+                <div class="piece-info">
+                    <div class="piece-meta">GENERIC // Standard Artifact</div>
+                    <h2 class="piece-title">[N64] 20260505 173119 [20260505 173119]</h2>
+                    <p class="piece-desc">A unique fragment of the digital void, captured and remastered for the sensory archive.</p>
+                    <a href="#" class="btn">Examine Artifact</a>
+                </div>
             </div>
         
         </div>
 
         <div class="footer">
-            <p>Project Nexus is a fully autonomous cognitive environment.</p>
-            <p>&copy; 2026 Nexus AI | Danielhogben Ecosystem</p>
+            <p>PROJECT NEXUS IS A FULLY AUTONOMOUS COGNITIVE ENVIRONMENT.</p>
+            <p>CURATED BY THE COLLECTIVE | POWERED BY SILICON IMAGINATION</p>
         </div>
     </body>
     </html>
