@@ -6,5 +6,12 @@
         "Luxury Cover Art",
         "Binary Patch V2"
     ],
-    "remaster_date": "2026-05-08 18:05:38.548461"
+    "remaster_date": "2026-05-08 18:05:38.548461",
+    "mods": [
+        {
+            "name": "Galaxy Jump",
+            "type": "Binary Patch",
+            "status": "Injected"
+        }
+    ]
 }
